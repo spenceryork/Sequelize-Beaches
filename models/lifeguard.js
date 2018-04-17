@@ -9,6 +9,9 @@ module.exports = (sequelize, DataTypes) => {
   });
   Lifeguard.associate = function(models) {
     // associations can be defined here
+    Lifeguard.belongsTo(models.Beach, {
+      foreignKey: 'lifeguard_id'
+    });
   };
   return Lifeguard;
 };
